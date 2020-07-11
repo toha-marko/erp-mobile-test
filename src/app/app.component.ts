@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { LoadingService } from './core/services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'erp';
+  loadedData$ = this.loadingService.isLoading$.pipe(map(loading => !loading));
+  constructor(private loadingService: LoadingService)
+  { }
 }

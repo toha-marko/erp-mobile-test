@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  span > img:last-child {
+    margin-left: 0.5rem;
+  }
+}
+
+.loading {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 45vh;
+  color: #646D7C;
+  font-size: 18px;
+}

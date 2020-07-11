@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<header>
+  <h3>Основное меню</h3>
+  <span>
+    <img src="assets/images/notify.svg" alt="Оповещения">
+    <img src="assets/images/user.svg" alt="Моё">
+  </span>
+</header>
+
+<router-outlet *ngIf="loadedData$ | async; else message"></router-outlet>
+
+<ng-template #message>
+  <p class="loading">Загружаем...</p>
+</ng-template>
+

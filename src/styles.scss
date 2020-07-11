@@ -5,12 +5,16 @@
   --fontColor: #22242c;
   --baseColor: #409bef;
   --borderColor: #c3cee0;
-  --bkgColor: #e5e5e5;
+  --bkgColor: #ECF1F9;
+
+  --lightFont: 200;
+  --normalFont: 400;
+  --boldFont: 700;
 }
 
 html {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 200;
+  font-weight: var(--lightFont);
   font-size: 15px;
   color: var(--fontColor);
   background-color: var(--bkgColor);
@@ -26,8 +30,14 @@ h3 {
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
+  margin: 0;
 }
 
 button {
   font-size: 16px;
+}
+
+button, ul, li {
+  border-radius: 0.3rem;
+  color: var(--fontColor);
 }

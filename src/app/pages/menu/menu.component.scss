@@ -1,0 +1,30 @@
+:host {
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+  display: block;
+
+  & > section {
+    width: 100%;
+    display: flex;
+
+    & > button {
+      flex: 1 1 100%;
+      height: 3.2rem;
+      border: 1px solid var(--borderColor);
+      font-weight: var(--fontLight);
+      text-align: left;
+      background-image: url(/assets/images/plus_rounded.svg);
+      background-repeat: no-repeat;
+      background-position: 0.5rem center;
+      background-color: transparent;
+      padding-left: calc(0.5rem + 30px);
+      outline-color: var(--baseColor);
+      &:first-child {
+        margin-right: 0.25rem;;
+      }
+      &:last-child {
+        margin-left: 0.25rem;;
+      }
+    }
+  }
+}
