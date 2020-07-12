@@ -26,12 +26,12 @@ export class AddComponent implements OnInit, OnDestroy {
   }
 
   onSave() {
-    this.addService.currentState.pipe(take(1)).subscribe(value => {
+    this.addService.currentState$.pipe(take(1)).subscribe(value => {
       if (value) {
         if ('sale' in value) {
           this.addService.addItem(value as menuItem);
         } else {
-          this.addService.addSection(value as section);
+          this.addService.addSection(value);
         }
       }
       this.addService.onSave();

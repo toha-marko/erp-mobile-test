@@ -14,10 +14,11 @@ export class SectionComponent implements OnInit, OnDestroy {
   formChanges: Subscription;
   form = this.fb.group({
     name: [null, Validators.required],
-    folder: [null, Validators.required],
+    folder: [null],
     color: [null]
   });
-  folders: Array<string> = [];
+
+  menu = this.addService.menu;
 
   constructor(private addService: AddService, private fb: FormBuilder) { }
 
@@ -25,9 +26,8 @@ export class SectionComponent implements OnInit, OnDestroy {
     this.formChanges = this.form.valueChanges.pipe(
       skipWhile(() => this.form.invalid),
       debounceTime(200),
-      distinctUntilChanged(),
-      tap(console.log)
-    ).subscribe(value => this.addService.currentState.next(value));
+      distinctUntilChanged()
+    ).subscribe(value => this.addService.currentState$.next(value));
   }
 
   ngOnDestroy() {

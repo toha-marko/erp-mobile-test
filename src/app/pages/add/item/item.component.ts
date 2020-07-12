@@ -25,7 +25,7 @@ export class ItemComponent implements OnInit, OnDestroy {
       debounceTime(200),
       distinctUntilChanged(),
       tap(console.log)
-    ).subscribe(value => this.addService.currentState.next(value));
+    ).subscribe(value => this.addService.currentState$.next(value));
   }
 
   ngOnDestroy() {

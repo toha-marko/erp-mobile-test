@@ -1,13 +1,31 @@
 <section [formGroup]="form">
   <app-labeled-input label="Название">
-    <input type="text" formControlName="name" placeholder="Введите название категории">
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="Введите название категории"
+    />
   </app-labeled-input>
   <app-labeled-input label="Раздел">
     <select type="text" formControlName="folder">
-      <option value="123">123</option>
+      <option [value]="menu">Основной - первый уровень</option>
+      <ng-template
+        *ngFor="let inItem of menu"
+        [ngTemplateOutlet]="option"
+        [ngTemplateOutletContext]="{$implicit: inItem}"
+      ></ng-template>
     </select>
   </app-labeled-input>
   <app-labeled-input label="Цвет раздела" noborder="true">
     <app-colors formControlName="color" name="color"></app-colors>
   </app-labeled-input>
-  </section>
+</section>
+
+<ng-template #option let-item>
+  <option [value]="item">{{ item.name }}</option>
+  <ng-template
+    *ngFor="let inItem of item.sections"
+    [ngTemplateOutlet]="option"
+    [ngTemplateOutletContext]="{$implicit: inItem}"
+  ></ng-template>
+</ng-template>

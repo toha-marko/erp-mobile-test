@@ -5,6 +5,7 @@ import { section } from '@type/menu.el';
 export abstract class StoreHandler {
   save$: Subject<any>;
   menu: Array<section>;
+  currentLevel: section | Array<section>;
 
   constructor(store: DataStorageService) {
     this.save$ = store.save$;
