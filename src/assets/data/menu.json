@@ -2,6 +2,7 @@
   {
     "items": [],
     "name": "Кофе на Молоке",
+    "color": "red",
     "sections": [
       {
         "items": [
@@ -86,6 +87,7 @@
   {
     "items": [],
     "name": "Черный Кофе",
+    "color": "green",
     "sections": [
       {
         "items": [

@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
-import { catchError, map, tap, shareReplay, take } from 'rxjs/operators';
+import { catchError, map, shareReplay, take } from 'rxjs/operators';
 import { of, Subject, Subscription } from 'rxjs';
 import { section } from '@type/menu.el';
 
@@ -17,8 +17,7 @@ export class DataStorageService implements OnDestroy {
     .pipe(
       catchError(() => of(JSON.parse(localStorage.getItem(storeName)))),
       map(data => data?.response || []),
-      shareReplay(1),
-      tap(console.log)
+      shareReplay(1)
     );
   save$ = new Subject<any>();
 
@@ -29,6 +28,7 @@ export class DataStorageService implements OnDestroy {
 
   private saveChanges() {
     localStorage.setItem(storeName, JSON.stringify({ response: this.#menu }));
+    console.log(this.#menu);
   }
 
   getMenu(): Array<section> {

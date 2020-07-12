@@ -1,0 +1,18 @@
+p {
+  font-size: 13px;
+  font-weight: var(--boldFont);
+  margin: 1rem 0 0.5rem 0;
+}
+
+div::ng-deep {
+  position: relative;
+  border: 1px solid var(--borderColor);
+  border-radius: 6px;
+  & > input, select {
+    width: 100%;
+  }
+}
+
+.noborder {
+  border: 0;
+}

@@ -1,0 +1,12 @@
+<ng-container [formGroup]="colors">
+  <ng-container *ngFor="let item of colorNames; trackBy: track">
+    <input
+      type="radio"
+      formControlName="color"
+      name="color"
+      [value]="item"
+      [id]="item"
+    />
+    <label [for]="item" [style.color]="item">{{ item }}</label>
+  </ng-container>
+</ng-container>

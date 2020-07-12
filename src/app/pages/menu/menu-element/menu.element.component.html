@@ -1,0 +1,37 @@
+<div [style.borderColor]="item['color']">
+  <img
+    src="assets/images/arrow.svg"
+    alt="arrow"
+    [style.transform]="groupsOpen ? 'rotate(90deg)': ''"
+    *ngIf="!item['sale']"
+    (click)="openClose()"
+  />
+  <button>
+    <img src="assets/images/points.svg" alt="more" class="more" />
+  </button>
+  <span>
+    {{ item.name }}
+  </span>
+  <span *ngIf="item['sale']">
+    {{ item['sale'] }} ₽
+  </span>
+</div>
+
+<section *ngIf="groupsOpen">
+  <ng-container *ngFor="let sec of item['sections']">
+    <ng-template
+      [ngTemplateOutlet]="menuElement"
+      [ngTemplateOutletContext]="{$implicit: sec}"
+    ></ng-template>
+  </ng-container>
+  <ng-container *ngFor="let sec of item['items']">
+    <ng-template
+      [ngTemplateOutlet]="menuElement"
+      [ngTemplateOutletContext]="{$implicit: sec}"
+    ></ng-template>
+  </ng-container>
+</section>
+
+<ng-template #menuElement let-el>
+  <app-menu-element [item]="el"></app-menu-element>
+</ng-template>

@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  background-color: #fff;
+  height: calc(100vh - 3.5rem);
+  flex-direction: column;
+  padding: 0 var(--sidePadding);
+  & > section {
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      a,
+      a:hover,
+      a:visited,
+      a:focus {
+        color: var(--baseColor);
+        font-weight: var(--normalFont);
+      }
+    }
+  }
+  border-radius: 1rem 1rem 0 0;
+}
+
+button.save {
+  position: fixed;
+  bottom: 1rem;
+  width: calc(100% - var(--sidePadding) * 2);
+  color: #fff;
+  background-color: var(--baseColor);
+  height: 3rem;
+  letter-spacing: 0.2px;
+  font-weight: var(--normalFont);
+  outline: none;
+  transition: background-color 0.12s ease-in;
+  will-change: background-color;
+  &:active {
+    background-color: darken($color: #409bef, $amount: 7.77);
+  }
+}

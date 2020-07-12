@@ -1,0 +1,13 @@
+<section [formGroup]="form">
+  <app-labeled-input label="Название">
+    <input type="text" formControlName="name" placeholder="Введите название категории">
+  </app-labeled-input>
+  <app-labeled-input label="Раздел">
+    <select type="text" formControlName="folder">
+      <option value="123">123</option>
+    </select>
+  </app-labeled-input>
+  <app-labeled-input label="Цвет раздела" noborder="true">
+    <app-colors formControlName="color" name="color"></app-colors>
+  </app-labeled-input>
+  </section>

@@ -1,4 +1,14 @@
 <section>
-  <button>Раздел</button>
-  <button>Позиция</button>
+  <a routerLink="/add/section">Раздел</a>
+  <a routerLink="/add/item">Позиция</a>
 </section>
+<section>
+  <div *ngIf="!menu?.length; else section">
+    <img src="assets/images/menu.svg" alt="меню" />
+    <p>Добавьте в новое меню разделы и позиции</p>
+  </div>
+</section>
+
+<ng-template #section>
+  <app-menu-element *ngFor="let item of menu" [item]="item"></app-menu-element>
+</ng-template>

@@ -1,11 +1,11 @@
 header {
   display: flex;
-  height: 3rem;
+  height: 3.5rem;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0 var(--sidePadding);
   span > img:last-child {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 }
 

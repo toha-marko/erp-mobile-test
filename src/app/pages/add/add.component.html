@@ -1,0 +1,8 @@
+<section>
+  <h2>Добавить {{ title }}</h2>
+  <a routerLink="/menu">Отмена</a>
+</section>
+<section>
+  <router-outlet></router-outlet>
+</section>
+<button class="save" (click)="onSave()">Сохранить</button>

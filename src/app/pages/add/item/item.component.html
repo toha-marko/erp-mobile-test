@@ -1,0 +1,8 @@
+<section [formGroup]="form">
+<app-labeled-input label="Название">
+  <input type="text" formControlName="name" placeholder="Введите название позиции">
+</app-labeled-input>
+<app-labeled-input label="Цена">
+  <input type="text" formControlName="sale" appCurrency placeholder="Введите цену">
+</app-labeled-input>
+</section>

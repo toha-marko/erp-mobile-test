@@ -22,6 +22,9 @@
       "@type/*": [
         "src/app/core/type/*"
       ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
       "@/*": [
         "src/*"
       ]

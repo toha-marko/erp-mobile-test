@@ -1,16 +1,14 @@
+import { Injectable } from '@angular/core';
 import { DataStorageService } from '@services/data.storage.service';
 import { section } from '@type/menu.el';
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { StoreHandler } from '@/app/core/classes/store.action';
 
-@Injectable({ providedIn: 'root' })
-export class MenuService {
+@Injectable({
+  providedIn: 'root'
+})
+export class MenuService extends StoreHandler {
 
-  menu: Array<section>;
-  save$: Subject<any>;
-
-  constructor(private store: DataStorageService) {
-    this.menu = this.store.getMenu();
-    this.save$ = this.store.save$;
+  constructor(store: DataStorageService) {
+    super(store);
   }
 }

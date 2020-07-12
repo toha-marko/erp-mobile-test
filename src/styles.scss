@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;600;700&display=swap");
 @import "~normalize-scss/sass/normalize/import-now";
 
 :root {
   --fontColor: #22242c;
   --baseColor: #409bef;
   --borderColor: #c3cee0;
-  --bkgColor: #ECF1F9;
+  --bkgColor: #ecf1f9;
 
   --lightFont: 200;
   --normalFont: 400;
-  --boldFont: 700;
+  --boldFont: 600;
+
+  --sidePadding: 1rem;
 }
 
 html {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: var(--lightFont);
   font-size: 15px;
   color: var(--fontColor);
@@ -33,11 +35,46 @@ h3 {
   margin: 0;
 }
 
+a,
 button {
   font-size: 16px;
+  cursor: pointer;
 }
 
-button, ul, li {
+a {
+  font-weight: 300;
+  text-decoration: none;
+}
+
+a:hover,
+a:visited {
+  color: var(--fontColor);
+}
+
+a:active {
+  color: var(--baseColor);
+}
+
+a,
+button,
+ul,
+li {
   border-radius: 0.3rem;
   color: var(--fontColor);
+  outline-color: var(--baseColor);
+  border: 0;
+}
+
+input,
+select {
+  box-sizing: border-box;
+  border: 0;
+  background-color: transparent;
+  color: var(--fontColor);
+  font-weight: var(--lightFont);
+  font-size: 14px;
+  line-height: 3rem;
+  min-height: 3rem;
+  padding-left: 1rem;
+  outline-color: var(--baseColor);
 }
