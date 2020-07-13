@@ -1,19 +1,12 @@
 <section [formGroup]="form">
   <app-labeled-input label="Название">
-    <input
-      type="text"
-      formControlName="name"
-      placeholder="Введите название категории"
-    />
+    <input type="text" formControlName="name" placeholder="Введите название категории" />
   </app-labeled-input>
   <app-labeled-input label="Раздел">
-    <select type="text" formControlName="folder">
-      <option [value]="menu">Основной - первый уровень</option>
-      <ng-template
-        *ngFor="let inItem of menu"
-        [ngTemplateOutlet]="option"
-        [ngTemplateOutletContext]="{$implicit: inItem}"
-      ></ng-template>
+    <select formControlName="folder">
+      <option [ngValue]="menu">Основной - первый уровень</option>
+      <ng-container *ngFor="let inItem of menu" [ngTemplateOutlet]="option"
+        [ngTemplateOutletContext]="{$implicit: inItem}"></ng-container>
     </select>
   </app-labeled-input>
   <app-labeled-input label="Цвет раздела" noborder="true">
@@ -22,10 +15,7 @@
 </section>
 
 <ng-template #option let-item>
-  <option [value]="item">{{ item.name }}</option>
-  <ng-template
-    *ngFor="let inItem of item.sections"
-    [ngTemplateOutlet]="option"
-    [ngTemplateOutletContext]="{$implicit: inItem}"
-  ></ng-template>
+  <option [ngValue]="item">{{ item.name }}</option>
+  <ng-container *ngFor="let inItem of item.sections" [ngTemplateOutlet]="option"
+    [ngTemplateOutletContext]="{$implicit: inItem}"></ng-container>
 </ng-template>

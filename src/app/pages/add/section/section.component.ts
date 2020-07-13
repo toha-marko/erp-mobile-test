@@ -26,7 +26,8 @@ export class SectionComponent implements OnInit, OnDestroy {
     this.formChanges = this.form.valueChanges.pipe(
       skipWhile(() => this.form.invalid),
       debounceTime(200),
-      distinctUntilChanged()
+      distinctUntilChanged(),
+      tap(console.log),
     ).subscribe(value => this.addService.currentState$.next(value));
   }
 
